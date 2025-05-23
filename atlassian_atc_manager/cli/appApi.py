@@ -112,14 +112,14 @@ class AppApi(object):
         self.show_config()
         return True
 
-    def __sync_case(self, file_path=None, print_file_tree=True):
+    def __extract_case(self, file_path=None, print_file_tree=True):
         if file_path is None:
             if self.app_args.get("test_path"):
                 file_path = os.path.abspath(self.app_args.get("test_path"))
             else:
                 file_path = self.app_config.app_workdir
         if print_file_tree:
-            self.app_logger.launch("Start to check and sync below files:")
+            self.app_logger.launch("Start to check and extract below files:")
             print_tree(file_path)
         extractor = AppExtractor()
         if os.path.isfile(file_path) and str(file_path).endswith(".py"):
@@ -170,11 +170,11 @@ class AppApi(object):
         elif os.path.isdir(file_path):
             for item in os.listdir(file_path):
                 item_path = os.path.join(file_path, item)
-                self.__sync_case(item_path, print_file_tree=False)
+                self.__extract_case(item_path, print_file_tree=False)
         return True
 
-    def sync_case(self, file_path=None):
-        self.__sync_case(file_path=file_path, print_file_tree=True)
+    def extract_case(self, file_path=None):
+        self.__extract_case(file_path=file_path, print_file_tree=True)
         self.app_logger.success("Total {} requests to remote services via rest api".format(
             self.app_test_plugin.total_rest_requests
         ))

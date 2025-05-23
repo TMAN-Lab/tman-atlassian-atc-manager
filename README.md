@@ -63,9 +63,11 @@ atlas-atc-manager show-version
 Usage: atlas-atc-manager [COMMAND] [OPTIONS]
 
 Commands:
-  show-version        Display version info for this tool and your Python runtime
-  config-cred         Set and save Jira credentials/config (project, token, etc.)
-  sync-case           Parse test code and sync test cases to Jira (Xray, Zephyr Scale, etc.)
+  show-version        display version info for this tool and your Python runtime
+  show-variables      show all supported environment variables
+  show-config         show config
+  config-cred         set and save Jira credentials/config (project, token, etc.)
+  sync-case           extract test cases from code and sync them to Jira (Xray, Zephyr Scale, etc.)
 
 Use 'atlas-atc-manager <command> --help' for more info on a specific command.
 ```
@@ -73,16 +75,25 @@ Use 'atlas-atc-manager <command> --help' for more info on a specific command.
 ### `sync-case`
 
 ```text
-Usage: atlas-atc-manager sync-case --file-path <TEST_CODE_PATH> [options]
+Usage: atlas-atc-manager extract-case --test-path <TEST_CODE_PATH> [options]
 
 Options:
-  --file-path <TEST_CODE_PATH>      Path to a test file or folder (supports .py, .java, .robot)
-  --platform <xray|zephyr-scale>    Target test management tool (default: xray)
-  --project <PROJECT_KEY>           Jira project key (e.g. "TEST")
-  --hosting <cloud|dc>              Jira hosting type (default: cloud)
-  --jira-site <URL>                 Jira site URL (e.g. https://yourcompany.atlassian.net)
-  --jira-token <TOKEN>              Jira API token for authentication
-  -h, --help                        Show this help message and exit
+  --test-path <TEST_CODE_PATH>
+                        Path to a test file or folder (supports .py, .java, .robot)
+  --jira-plugin <xray>  Target test management tool on Jira : xray
+  --jira-project <PROJECT_KEY>
+                        Jira project key (e.g. "TEST")
+  --jira-hosting <cloud|dc>
+                        Jira hosting type (supports cloud, data-center) : cloud | dc
+  --jira-site <URL>     Jira site URL (e.g. https://yourcompany.atlassian.net)
+  --jira-user <USERNAME>
+                        Specify the Jira username for authentication
+  --jira-token <TOKEN>  Jira API token for authentication
+  --xray-client-id <CLIENT_ID>
+                        XRAY Cloud client id for authentication
+  --xray-client-secret <CLIENT_SECRET>
+                        XRAY Cloud client secret for authentication
+  -h, --help            Show this help message and exit
 ```
 
 - [How to Get Jira Cloud API Token](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/#Create-an-API-token)
@@ -90,11 +101,11 @@ Options:
 #### 🧪 Example
 
 ```bash
-atlas-atc-manager sync-case \
-  --file-path ./tests/ \
-  --platform xray \
-  --project QA \
-  --hosting dc \
+atlas-atc-manager extract-case \
+  --test-path ./tests/ \
+  --jira-plugin xray \
+  --jira-project QA \
+  --jira-hosting dc \
   --jira-site https://jira.mycompany.com \
   --jira-token xxxx-xxxx-xxxx
 ```

@@ -207,8 +207,8 @@ class AppParser(object):
             )
 
         sub_parser_sync_case = sub_parsers.add_parser(
-            "sync-case",
-            help="parse test code and sync test cases to Jira (Xray, Zephyr Scale, etc.)"
+            "extract-case",
+            help="extract test cases from code and sync them to Jira (Xray, Zephyr Scale, etc.)"
         )
         add_argument_to_sub_parser(
             sub_parser_sync_case,
