@@ -67,12 +67,12 @@ Commands:
   show-variables      show all supported environment variables
   show-config         show config
   config-cred         set and save Jira credentials/config (project, token, etc.)
-  sync-case           extract test cases from code and sync them to Jira (Xray, Zephyr Scale, etc.)
+  extract-case        extract test cases from code and sync them to Jira (Xray, Zephyr Scale, etc.)
 
 Use 'atlas-atc-manager <command> --help' for more info on a specific command.
 ```
 
-### `sync-case`
+### `extract-case`
 
 ```text
 Usage: atlas-atc-manager extract-case --test-path <TEST_CODE_PATH> [options]
@@ -115,7 +115,7 @@ atlas-atc-manager extract-case \
 Save frequently used configuration to a local file (`~/.atlas_atc_manager/credential.conf`), so you don’t need to pass everything each time.
 
 ```bash
-atlas-atc-manager config-cred --platform xray --project QA --hosting dc --jira-site https://jira.company.com --jira-token xxxx
+atlas-atc-manager config-cred --jira-plugin xray --jira-project QA --jira-hosting dc --jira-site https://jira.company.com --jira-token xxxx
 ```
 
 Re-run with `--overwrite` to update.
