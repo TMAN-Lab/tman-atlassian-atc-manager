@@ -25,7 +25,7 @@ else:
     with open(ver_dev_file, 'w') as f:
         f.write(VERSION)
 
-DESCRIPTION = 'Managing Automation Test Case on Atlassian Jira'
+DESCRIPTION = 'Extract test cases from your codebase and push them into Jira with a single command.'
 
 if os.path.exists('README.md'):
     with open('README.md', encoding='utf-8') as f:
