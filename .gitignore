@@ -48,3 +48,8 @@ Thumbs.db
 *.mov
 *.wmv
 
+# Custom
+build/
+*.egg-info/
+version_dev.txt
+
