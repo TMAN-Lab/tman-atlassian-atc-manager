@@ -14,7 +14,6 @@ pipelines:
           - git clone --bare git@bitbucket.org:jxit1/${BITBUCKET_REPO_SLUG}.git
           - cd ${BITBUCKET_REPO_SLUG}.git
           - git push --mirror git@github.com:tman-lab/${BITBUCKET_REPO_SLUG}.git
-          - git push --mirror git@gitee.com:tman-lab/${BITBUCKET_REPO_SLUG}.git
   tags:
     '*':
       - step:
@@ -26,7 +25,6 @@ pipelines:
             - git clone --bare git@bitbucket.org:jxit1/${BITBUCKET_REPO_SLUG}.git
             - cd ${BITBUCKET_REPO_SLUG}.git
             - git push --mirror git@github.com:tman-lab/${BITBUCKET_REPO_SLUG}.git
-            - git push --mirror git@gitee.com:tman-lab/${BITBUCKET_REPO_SLUG}.git
       - step:
           name: Upload Python Package
           image: python:3.12
