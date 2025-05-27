@@ -11,7 +11,9 @@
 
 ----
 
-This open-source CLI tool is developed and maintained by [Will Shi @ TMAN Consulting](https://en.tman.ltd), with the goal of bridging the gap between automated test code and Jira-based test management.
+This open-source CLI tool is developed and maintained by [Will Shi](https://profile.willshi.space/en) @ [TMAN Consulting](https://en.tman.ltd), with the goal of bridging the gap between automated test code and Jira-based test management.
+
+Designed to help teams move faster by connecting code with Jira.
 
 It helps QA and DevOps engineers **extract test cases directly from Python, Java, or Robot Framework code** and auto-create structured test cases in **Jira Xray** (both **Cloud** and **Data Center** editions).
 
@@ -50,7 +52,7 @@ Your encouragement helps this project (and the upcoming plugin) grow stronger �
 
 ----
 
-## ✨ Key Features
+## 🧠 Key Features
 
 - ✅ **Auto-detect and parse test cases** from Python (pytest, unittest), Java (JUnit-style), or Robot Framework files 
 - ✅ **Create or update corresponding test cases** in Jira (Xray) Cloud or Data Center
@@ -188,13 +190,6 @@ Re-run with `--overwrite` to update.
 Apache License 2.0
 
 [LICENSE](https://github.com/TMAN-Lab/tman-atlassian-atc-manager?tab=Apache-2.0-1-ov-file)
-
-----
-
-## 📒 Credits
-
-Developed by [Will Shi](https://profile.willshi.space/en) at [TMAN Consulting](https://en.tman.ltd)
-Designed to help teams move faster by connecting code with Jira.
 
 ----
 
