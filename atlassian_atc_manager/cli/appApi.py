@@ -113,6 +113,12 @@ class AppApi(object):
         return True
 
     def __extract_case(self, file_path=None, print_file_tree=True):
+        """
+
+        :param file_path:
+        :param print_file_tree:
+        :return:
+        """
         if file_path is None:
             if self.app_args.get("test_path"):
                 file_path = os.path.abspath(self.app_args.get("test_path"))
